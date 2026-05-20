@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe docx_to_json.py \"C:\\\\Users\\\\Вова\\\\Downloads\\\\Шашлык из баранины в духовке_Моротская.docx\" 2>&1)",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe -c \"import json; r=json.load\\(open\\('recipes.json',encoding='utf-8'\\)\\); [print\\(i\\) for i in r[0]['ingredients']]\")",
+      "PowerShell(Out-Null *)",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe -m py_compile docx_to_json.py; if \\($?\\) { \"OK\" } else { \"SYNTAX ERROR\" })",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe -m py_compile upload_recipes.py; if \\($?\\) { \"OK\" } else { \"SYNTAX ERROR\" })",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe docx_to_json.py \"C:\\\\Users\\\\Вова\\\\Downloads\\\\открытый пирог с цукини и козьим сыром_Сотникова.docx\" 2>&1)",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe -m py_compile docx_to_json.py upload_recipes.py; if \\($?\\) { \"OK\" } else { \"SYNTAX ERROR\" })",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe docx_to_json.py \"мои-рецепты\\\\открытый пирог с цукини и козьим сыром_Сотникова.docx\" 2>&1; .\\\\venv\\\\Scripts\\\\python.exe -c \"import json; r=json.load\\(open\\('recipes.json',encoding='utf-8'\\)\\); [print\\(i\\) for i in r[0]['ingredients']]\")",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe docx_to_json.py \"C:\\\\Users\\\\Вова\\\\Downloads\\\\открытый пирог с цукини и козьим сыром_Сотникова.docx\" 2>&1; .\\\\venv\\\\Scripts\\\\python.exe -c \"import json; r=json.load\\(open\\('recipes.json',encoding='utf-8'\\)\\); [print\\(i\\) for i in r[0]['ingredients']]\")",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe upload_recipes.py 2>&1)",
+      "PowerShell(cd \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\"; $env:PYTHONIOENCODING=\"utf-8\"; .\\\\venv\\\\Scripts\\\\python.exe -m py_compile upload_recipes.py; if \\($?\\) { \"OK\" } else { \"ERROR\" })",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\\\\upload_recipes.py\" | Select-String \"author\" | ForEach-Object { \"$\\($_.LineNumber\\): $\\($_.Line\\)\" })",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\\\\docx_to_json.py\" | Select-String \"cooking_time|time|мин|час\" | ForEach-Object { \"$\\($_.LineNumber\\): $\\($_.Line\\)\" })",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\\\\upload_recipes.py\" | Select-String \"RECIPES_FILE|recipes.json|IMAGES_DIR|SITE_URL\" | ForEach-Object { \"$\\($_.LineNumber\\): $\\($_.Line\\)\" })",
+      "PowerShell(ls \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\" | Where-Object { -not $_.PSIsContainer })",
+      "PowerShell(python -c $script)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Вова\\\\Documents\\\\gastronom-uploader\\\\\" | Where-Object { $_.Name -match \"run|запустить\" } | Select-Object Name)",
+      "PowerShell(Remove-Item *)"
+    ]
+  }
+}
